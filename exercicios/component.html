@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Componente</title>
+        <link rel="stylesheet" href="/css/estilo.css">
+        <script src="/js/vue.min.js"></script>
+    </head>
+    <body class="exercicio">
+
+        <div id="app">
+            <salutation name="Ana"></salutation>
+            <salutation name="Bia"></salutation>
+            <salutation name="Julia"></salutation>
+        </div>
+
+        <script>
+            Vue.component('salutation', {
+                props: ['name'],
+                template: `
+                    <div> Good Morning {{ name }}! </div>
+                `
+            });
+
+            new Vue({
+                el: '#app'
+            });
+        </script>
+
+    </body>
+</html>
